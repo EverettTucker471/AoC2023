@@ -7,14 +7,12 @@ class Stacker:
         self.size = 0
 
     def push(self, val):
-        temp = self.head
-        self.head = Node(val)
-        self.head.next = temp
+        self.head = Node(val, self.head)
         self.size += 1
 
     def pop(self):
         if self.size == 0:
-            raise Exception("Stack is Empty")
+            raise Exception("Stacker is Empty")
         rtn = self.head.val
         self.head = self.head.next
         self.size -= 1

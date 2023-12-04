@@ -1,5 +1,6 @@
 from Stacker import Stacker
 
+
 def solve1():
     file = open("AoC4.txt", "r")
     lines = [line.strip() for line in file.readlines()]
@@ -7,7 +8,7 @@ def solve1():
     rtn = 0
     for line in lines:
         num_lucky = 0
-        line = line[line.find(':')+1:].strip()
+        line = line[line.find(':') + 1:].strip()
         left, right = line.split('|')
         left = [int(num) for num in left.strip().split(' ') if num != '']
         right = [int(num.strip()) for num in right.strip().split(' ') if num != '']
@@ -20,7 +21,7 @@ def solve1():
     return rtn
 
 
-# This one actually took a while to run
+# This one actually took a while to run, about 10 seconds
 def solve2():
     file = open("AoC4.txt", "r")
     lines = [line.strip() for line in file.readlines()]
@@ -29,7 +30,7 @@ def solve2():
     arr = []
     stack = Stacker()
     for line in lines:
-        line = line[line.find(':')+1:].strip()
+        line = line[line.find(':') + 1:].strip()
         left, right = line.split('|')
         left = [int(num) for num in left.strip().split(' ') if num != '']
         right = [int(num.strip()) for num in right.strip().split(' ') if num != '']
@@ -40,6 +41,10 @@ def solve2():
                 lucky += 1
         arr.append(lucky)
 
+    """
+    One could probably use a dynamic programming based approach to speed this up, 
+    but it is too early to worry about that.
+    """
     rtn = 0
     for i in range(0, len(arr)):
         stack.push(i)
@@ -49,7 +54,7 @@ def solve2():
         index = stack.pop()
         lucky = arr[index]
 
-        for i in range(index+1, index+lucky+1):
+        for i in range(index + 1, index + lucky + 1):
             stack.push(i)
 
     return rtn
