@@ -58,3 +58,31 @@ def solve2():
             stack.push(i)
 
     return rtn
+
+
+def solve2Fast():
+    file = open("AoC4.txt", "r")
+    lines = [line.strip() for line in file.readlines()]
+
+    # We need more preprocessing
+    arr = []
+    for line in lines:
+        line = line[line.find(':') + 1:].strip()
+        left, right = line.split('|')
+        left = [int(num) for num in left.strip().split(' ') if num != '']
+        right = [int(num.strip()) for num in right.strip().split(' ') if num != '']
+
+        lucky = 0
+        for num in left:
+            if num in right:
+                lucky += 1
+        arr.append(lucky)
+
+    map = {}
+    for i in reversed(range(0, len(arr))):
+        val = 1
+        for j in range(i+1, i+arr[i]+1):
+            val += map.get(j, 0)
+        map[i] = val
+
+    return sum(map.values())
