@@ -60,6 +60,10 @@ def solve2():
     return rtn
 
 
+"""
+This is the aforementioned dynamic programming approach.
+The other code takes about 7 seconds to run, this takes only 2 milliseconds
+"""
 def solve2Fast():
     file = open("AoC4.txt", "r")
     lines = [line.strip() for line in file.readlines()]
