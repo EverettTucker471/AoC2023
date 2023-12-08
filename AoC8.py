@@ -15,8 +15,8 @@ def solve1():
             graph[begin.strip()] = end.strip().strip("(").strip(")").split(", ")
 
     rtn = 0
-    n = len(pattern)
     cur = 'AAA'
+    n = len(pattern)
     while cur != 'ZZZ':
         if pattern[rtn % n] == 'L':
             cur = graph[cur][0]
