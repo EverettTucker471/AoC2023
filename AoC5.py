@@ -82,10 +82,7 @@ def solve2():
     maps.append(modifier)
     maps.pop(0)
 
-    print(maps)
-
     for map in maps:
-        print(intervals)
         next_intervals = []
         for interval in intervals:
             union = [interval]
@@ -109,7 +106,6 @@ def solve2():
 
         intervals = next_intervals
 
-    print(intervals)
     rtn = math.inf
     for interval in intervals:
         rtn = min(rtn, interval[0])
