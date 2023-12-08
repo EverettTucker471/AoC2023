@@ -26,10 +26,6 @@ def solve2():
 
     hands = sorted(hands, key=functools.cmp_to_key(compare))
 
-    for hand in hands:
-        print(hand)
-        print(computeType(hand[0]))
-
     rtn = 0
     for i in range(0, len(hands)):
         rtn += hands[i][1] * (i + 1)
