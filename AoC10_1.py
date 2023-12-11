@@ -15,10 +15,6 @@ def solve1():
         for j in range(0, n):
             if grid[i][j] == 'S':
                 start = i * n + j
-    """
-    The grid is a square 140 x 140, which is nice
-    We wish to construct an adjacency list
-    """
 
     cur = 0
     if start in getAdjacent(grid, start - n, n):
