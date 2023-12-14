@@ -71,7 +71,7 @@ def solve2():
 
     first_index = 0
     second_index = 0
-    for k in range(0, gargantua):
+    for k in range(gargantua):
         cycle(grid, n, m)
         string = toString(grid, n, m)
         if string in previous:
@@ -81,11 +81,11 @@ def solve2():
             previous.append(string)
 
     grid_string = toString(grid, n, m)
-    for i in range(0, len(previous)):
+    for i in range(len(previous)):
         if previous[i] == grid_string:
             first_index = i + 1
 
-    iterations = (gargantua - first_index) % (second_index - first_index)
+    iterations = (gargantua - second_index) % (second_index - first_index)
 
     for i in range(iterations):
         cycle(grid, n, m)
