@@ -136,6 +136,9 @@ class Beam:
                 self.vel_x = 1
                 self.vel_y = 0
 
+    """
+    Generates a new unique hash for the Beam based on its position and velocity
+    """
     def hash(self, n):
         if self.vel_x == 1:
             modifier = 0
