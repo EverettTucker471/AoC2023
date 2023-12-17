@@ -9,10 +9,10 @@ def solve1():
 
     """
     The tolerance measures how many times you permit the cycle to run without
-    any new coordinates being added to the explored set
+    any new coordinates being added to the explored set.
     The first part takes a tolerance of 16 to find the right answer,
-    but I would suggest running it with a higher tolerance of about 1000, just to be sure
-    The coordinates listed below are initial coordinates, for part 2
+    but I would suggest running it with a higher tolerance of about 1000, just to be sure.
+    The coordinates listed below are the initial coordinates, for part 2.
     """
     tolerance = 1000
     return compute(grid, tolerance, 0, 0, 1, 0)
@@ -138,11 +138,11 @@ class Beam:
 
     def hash(self, n):
         if self.vel_x == 1:
-            modifier = 1
+            modifier = 0
         elif self.vel_x == -1:
-            modifier = 2
+            modifier = 1
         elif self.vel_y == 1:
-            modifier = 3
+            modifier = 2
         else:
-            modifier = 4
+            modifier = 3
         return self.pos_x + n * self.pos_y + n ** 2 * modifier
