@@ -51,7 +51,7 @@ def solve1():
                 if min(start[1], end[1]) < index < max(start[1], end[1]):
                     empty += 1
 
-            rtn += 999999 * empty + (max(start[0], end[0]) - min(start[0], end[0])) + (max(start[1], end[1]) - min(start[1], end[1]))
+            rtn += 1 * empty + (max(start[0], end[0]) - min(start[0], end[0])) + (max(start[1], end[1]) - min(start[1], end[1]))
 
     return rtn
 
